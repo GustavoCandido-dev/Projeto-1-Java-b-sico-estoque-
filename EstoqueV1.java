@@ -58,10 +58,26 @@ public class Projeto {
                     JOptionPane.showMessageDialog(null, "Não existe "+ pesquisa);
 
                 }
-            }
-            else if(opcaoEscolhida == 4) {
 
             }
+            else if(opcaoEscolhida == 4) {
+                Integer pesquisa = 0;
+                boolean resultado;
+                Integer botarEstoque = 0;
+                pesquisa = Integer.valueOf((JOptionPane.showInputDialog(null, "Digite o código do produto que você procura")));
+                resultado = sequencia.contains(pesquisa);
+                Integer estoqueAntigo = qtdEstoque.get(pesquisa);
+                if (resultado == true) {
+                    botarEstoque = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite quantos você quer adicionar ao estoque: "));
+                    Integer somaEstoque = (estoqueAntigo + botarEstoque);
+                    qtdEstoque.set(pesquisa, somaEstoque);
+                }
+                else {
+                    JOptionPane.showMessageDialog(null, "Não existe "+ produtoEstoque.get(pesquisa));
+
+                }
+                }
+
             else if(opcaoEscolhida == 5) {
 
             }
@@ -71,9 +87,15 @@ public class Projeto {
             else if(opcaoEscolhida == 7) {
 
             }
-            else if(opcaoEscolhida == 8) {
+            else if(opcaoEscolhida == 8)
+            {
+                double totalEstoque = 0;
+                for (int i = 0; i < valorEstoque.size(); i++) {
+                    totalEstoque += valorEstoque.get(i) * qtdEstoque.get(i);
+                }
+                JOptionPane.showMessageDialog(null, "Valor total do estoque: R$" + totalEstoque);
+}
 
-            }
             else {
 
             }
