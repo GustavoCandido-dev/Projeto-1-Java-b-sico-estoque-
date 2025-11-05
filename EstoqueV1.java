@@ -81,9 +81,19 @@ public class Projeto {
             else if(opcaoEscolhida == 5) {
 
             }
-            else if(opcaoEscolhida == 6) {
-
-            }
+                        else if(opcaoEscolhida == 6) {
+                int excluirCodigo = Integer.parseInt(JOptionPane.showInputDialog("Digite o código do produto a excluir:"));
+                for (int i = 0; i < sequencia.size(); i++) {
+                    if (sequencia.get(i) == excluirCodigo) {
+                        produtoEstoque.remove(i);
+                        valorEstoque.remove(i);
+                        sequencia.remove(i);
+                        qtdEstoque.remove(i);
+                        JOptionPane.showMessageDialog(null, "Produto excluído com sucesso!");
+                        break;
+                    }
+                }
+                        }
             else if(opcaoEscolhida == 7) {
 
             }
