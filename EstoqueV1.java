@@ -45,7 +45,19 @@ public class Projeto {
                 JOptionPane.showMessageDialog(null, listaCompleta);
         }
             else if(opcaoEscolhida == 3) {
+                String pesquisa = "";
+                boolean resultado;
+                String produtoPesquisado = "";
+                pesquisa = (JOptionPane.showInputDialog(null, "Digite qual produto você procura"));
+                produtoPesquisado = String.valueOf(produtoEstoque.indexOf(pesquisa));
+                resultado = produtoEstoque.contains(pesquisa);
+                if (resultado == true) {
+                    JOptionPane.showMessageDialog(null, "Existem " + qtdEstoque.get(Integer.parseInt(produtoPesquisado)) + " " + pesquisa);
+                }
+                else {
+                    JOptionPane.showMessageDialog(null, "Não existe "+ pesquisa);
 
+                }
             }
             else if(opcaoEscolhida == 4) {
 
