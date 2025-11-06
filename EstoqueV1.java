@@ -79,9 +79,23 @@ public class Projeto {
                 }
 
             else if(opcaoEscolhida == 5) {
+                Integer pesquisa = 0;
+                boolean resultado;
+                Integer botarEstoque = 0;
+                pesquisa = Integer.valueOf((JOptionPane.showInputDialog(null, "Digite o código do produto que você procura")));
+                resultado = sequencia.contains(pesquisa);
+                Integer estoqueAntigo = qtdEstoque.get(pesquisa);
+                if (resultado == true) {
+                    botarEstoque = Integer.parseInt(JOptionPane.showInputDialog(null, "Digite quantos você vendeu: "));
+                    Integer somaEstoque = (estoqueAntigo - botarEstoque);
+                    qtdEstoque.set(pesquisa, somaEstoque);
+                }
+                else {
+                    JOptionPane.showMessageDialog(null, "Não existe "+ produtoEstoque.get(pesquisa));
 
+                }
             }
-                        else if(opcaoEscolhida == 6) {
+            else if(opcaoEscolhida == 6) {
                 int excluirCodigo = Integer.parseInt(JOptionPane.showInputDialog("Digite o código do produto a excluir:"));
                 for (int i = 0; i < sequencia.size(); i++) {
                     if (sequencia.get(i) == excluirCodigo) {
@@ -93,7 +107,7 @@ public class Projeto {
                         break;
                     }
                 }
-                        }
+            }
             else if(opcaoEscolhida == 7) {
 
             }
