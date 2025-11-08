@@ -39,11 +39,11 @@ public class Projeto {
             else if (opcaoEscolhida == 2) {
                 String listaCompleta = "";
                 for (int i = 0; i < produtoEstoque.size(); i++) {
-                listaCompleta += (sequencia.get(i) + " - " + produtoEstoque.get(i) + " por R$ " + valorEstoque.get(i) + " há " + qtdEstoque.get(i) + " em estoque\n");
+                    listaCompleta += (sequencia.get(i) + " - " + produtoEstoque.get(i) + " por R$ " + valorEstoque.get(i) + " há " + qtdEstoque.get(i) + " em estoque\n");
 
-            }
+                }
                 JOptionPane.showMessageDialog(null, listaCompleta);
-        }
+            }
             else if(opcaoEscolhida == 3) {
                 String pesquisa = "";
                 boolean resultado;
@@ -76,7 +76,7 @@ public class Projeto {
                     JOptionPane.showMessageDialog(null, "Não existe "+ produtoEstoque.get(pesquisa));
 
                 }
-                }
+            }
 
             else if(opcaoEscolhida == 5) {
                 Integer pesquisa = 0;
@@ -109,6 +109,13 @@ public class Projeto {
                 }
             }
             else if(opcaoEscolhida == 7) {
+                String listaCompleta = "";
+                for (int i = 0; i < produtoEstoque.size(); i++) {
+                    if (qtdEstoque.get(i) == 0) {
+                        listaCompleta += (sequencia.get(i) + " - " + produtoEstoque.get(i) + " por R$ " + valorEstoque.get(i) + " há " + qtdEstoque.get(i) + " em estoque\n");
+                    }
+                }
+                JOptionPane.showMessageDialog(null, listaCompleta);
 
             }
             else if(opcaoEscolhida == 8)
@@ -118,7 +125,7 @@ public class Projeto {
                     totalEstoque += valorEstoque.get(i) * qtdEstoque.get(i);
                 }
                 JOptionPane.showMessageDialog(null, "Valor total do estoque: R$" + totalEstoque);
-}
+            }
 
             else {
 
